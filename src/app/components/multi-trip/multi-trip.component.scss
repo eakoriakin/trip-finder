@@ -1,0 +1,42 @@
+@import 'src/styles.scss';
+.app-multi-trip {
+  &-card {
+    margin-bottom: 1em;
+    &-right {
+      text-align: right;
+    }
+    &-route {
+      margin-top: -6px;
+      .mat-icon {
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+    &-bottom {
+      font-style: italic;
+      font-size: 14px;
+      margin-top: 0.5em;
+    }
+    &-transport {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    &-last-cost {
+      margin-top: 0.5em;
+      font-size: 14px;
+      color: #737373;
+    }
+    &-cost {
+      text-decoration: line-through;
+    }
+    &-total {
+      font-weight: bold;
+      background-color: mat-color($mat-grey, 300);
+      margin-bottom: 0;
+      .app-multi-trip-card-route {
+        margin-top: 0;
+      }
+    }
+  }
+}

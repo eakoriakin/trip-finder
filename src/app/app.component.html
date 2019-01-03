@@ -1,0 +1,8 @@
+<div class="app">
+  <app-header></app-header>
+  <div class="app-inner" fxFlexLayout="row">
+    <div [fxFlex.gt-xs]="60" [fxFlexOffset.gt-xs]="20">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

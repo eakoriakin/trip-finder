@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@angular/material/theming';
+$content-margin: 1.25em;
+$app-padding: 20px;
+body {
+  margin: 0;
+}
+
+[margin-bottom] {
+  margin-bottom: $content-margin !important;
+}
+
+[margin-right] {
+  margin-right: $content-margin !important;
+}

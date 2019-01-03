@@ -1,0 +1,54 @@
+<div class="app-multi-trip">
+  <mat-card *ngFor="let trip of multiTrip?.trips" class="app-multi-trip-card"
+    fxFlexLayout="row">
+    <div class="app-multi-trip-card-left" [fxFlex]="70">
+      <div class="app-multi-trip-card-route">
+        <span class="app-multi-trip-card-from">{{trip.tripDeal.departure}}</span>
+        <mat-icon>chevron_right</mat-icon>
+        <span class="app-multi-trip-card-to">{{trip.tripDeal.arrival}}</span>
+      </div>
+      <div class="app-multi-trip-card-bottom">
+        <span class="app-multi-trip-card-transport">{{trip.tripDeal.transport}}</span>
+        <span class="app-multi-trip-card-reference">{{trip.tripDeal.reference}}</span>
+        for
+        <span class="app-multi-trip-card-duration">{{trip.tripDeal.duration.h}}h
+          {{trip.tripDeal.duration.m}}m</span>
+      </div>
+    </div>
+    <div class="app-multi-trip-card-right" fxFlex>
+      <div class="app-multi-trip-card-discounted-cost">
+        {{trip.tripDeal.discountedCost | currency:trip.tripDeal.currency}}
+      </div>
+      <div class="app-multi-trip-card-last-cost" *ngIf="trip.tripDeal.discount">
+        <span fxHide.xs>Last price: </span>
+        <span class="app-multi-trip-card-cost">{{trip.tripDeal.cost |
+          currency:trip.tripDeal.currency}}</span>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card class="app-multi-trip-card app-multi-trip-card-total" *ngIf="multiTrip"
+    fxFlexLayout="row">
+    <div class="app-multi-trip-card-left" [fxFlex]="70">
+      <div class="app-multi-trip-card-route">
+        <span class="app-multi-trip-card-from">Total</span>
+      </div>
+      <div class="app-multi-trip-card-bottom">
+        <span class="app-multi-trip-card-duration">
+          {{multiTrip.duration.h}}h {{multiTrip.duration.m}}m
+        </span>
+      </div>
+    </div>
+    <div class="app-multi-trip-card-right" fxFlex>
+      <div class="app-multi-trip-card-discounted-cost">
+        {{multiTrip.discountedCost | currency:multiTrip.currency}}
+      </div>
+      <div class="app-multi-trip-card-last-cost" *ngIf="multiTrip.cost !== multiTrip.discountedCost">
+        Save:
+        <span class="app-multi-trip-card-cost">
+          {{multiTrip.cost - multiTrip.discountedCost |
+          currency:multiTrip.currency}}
+        </span>
+      </div>
+    </div>
+  </mat-card>
+</div>

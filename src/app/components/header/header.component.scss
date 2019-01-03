@@ -1,0 +1,8 @@
+@import 'src/styles.scss';
+.app-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: $app-padding;
+  .mat-h1 {
+    margin-bottom: 0;
+  }
+}

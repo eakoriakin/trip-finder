@@ -1,0 +1,46 @@
+<form [formGroup]="form" margin-bottom>
+  <div fxFlexLayout="row" fxLayoutGap="20px" margin-bottom>
+    <mat-form-field fxFlex="50">
+      <input id="app-home-from-city" type="text" placeholder="From" matInput
+        formControlName="fromCity" [matAutocomplete]="fromCityAutocomplete">
+      <mat-autocomplete #fromCityAutocomplete="matAutocomplete">
+        <mat-option *ngFor="let city of filteredFromCities | async" [value]="city">
+          {{city}}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="fromCityControl.invalid">
+        Select a city
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input id="app-home-to-city" type="text" placeholder="To" matInput
+        formControlName="toCity" [matAutocomplete]="toCityAutocomplete">
+      <mat-autocomplete #toCityAutocomplete="matAutocomplete">
+        <mat-option *ngFor="let city of filteredToCities | async" [value]="city">
+          {{city}}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="toCityControl.invalid">
+        Select a city
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-button-toggle-group formControlName="tripType">
+      <mat-button-toggle value="Cheapest">Cheapest</mat-button-toggle>
+      <mat-button-toggle value="Fastest">Fastest</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</form>
+<div margin-bottom>
+  <button id="app-home-search" mat-stroked-button (click)="search()"
+    margin-right>
+    <mat-icon>search</mat-icon>
+    Search
+  </button>
+  <button id="app-home-reset" mat-stroked-button (click)="reset()">
+    <mat-icon>refresh</mat-icon>
+    Reset
+  </button>
+</div>
+<app-multi-trip [multiTrip]="multiTrip"></app-multi-trip>
