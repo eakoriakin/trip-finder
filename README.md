@@ -1,5 +1,5 @@
 # Trip Finder
-A small app that uses graphs and [Dijkstra’s algorithm](https://hackernoon.com/how-to-implement-dijkstras-algorithm-in-javascript-abdfd1702d04) to implement a simple and quick search of the cheapest or fastest path between two cities where multiple transportation types are available (car, bus or train).
+A small app that uses graphs and [Dijkstra’s algorithm](https://hackernoon.com/how-to-implement-dijkstras-algorithm-in-javascript-abdfd1702d04) to implement a simple and quick search of the cheapest or fastest path between two cities where multiple transportation modes are available, such as car, bus or train.
 
 ![iOS Demo](images/ios-1.png)
 
